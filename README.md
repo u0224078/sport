@@ -49,4 +49,4 @@
 - 優先性：7
 
 ## ##
-- Bigboard :http://imgur.com/1Ho6sEp
+- Bigboard :http://i.imgur.com/1Ho6sEp.png
