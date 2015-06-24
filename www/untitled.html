@@ -1,0 +1,778 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>計算食物熱量</title>
+      <script language="javascript">
+<!--
+var kcal=0;
+var sitem="";
+var total="";
+function add_count(s_item){
+var tmp = "";
+var pos1 = 0;
+var pos2 = 0;
+	for (var poscount = 0; poscount < s_item.length; poscount++)
+	{
+		tmp = s_item.charAt(poscount);
+		if (tmp == "(")
+		{
+			pos1 = poscount+1;
+		}
+		else if (tmp == ")")
+		{
+			pos2 = poscount;
+		}
+	}
+	kcal = kcal + parseInt(s_item.substring(pos1, pos2));
+	return kcal;
+}
+function delete_item(form){
+	sitem=(form.selected_display.options[form.selected_display.selectedIndex].value);
+	if (form.selected_display.selectedIndex != 0)
+	{
+		form.cal_volume.value = delete_count(sitem);
+		form.selected_display.options[form.selected_display.selectedIndex]=null;
+	}
+}
+function delete_count(s_item){
+var tmp = "";
+var pos1 = 0;
+var pos2 = 0;
+	for (var poscount = 0; poscount < s_item.length; poscount++)
+	{
+		tmp = s_item.charAt(poscount);
+		if (tmp == "(")
+		{
+			pos1 = poscount+1;
+		}
+		else if (tmp == ")")
+		{
+			pos2 = poscount;
+		}
+	}
+	kcal = kcal - parseInt(s_item.substring(pos1, pos2));
+	return kcal;
+}
+function cal_volume1(form){
+	sitem=(form.kcal_item1.options[form.kcal_item1.selectedIndex].value);
+	food = new Option(sitem,sitem);
+	form.selected_display.options[form.selected_display.length]=food;
+	form.cal_volume.value = add_count(sitem);
+	form.kcal_item1.selectedIndex=0;	
+}
+function cal_volume2(form){
+	sitem=(form.kcal_item2.options[form.kcal_item2.selectedIndex].value);
+	food = new Option(sitem,sitem);
+	form.selected_display.options[form.selected_display.length]=food;
+	form.cal_volume.value = add_count(sitem);
+	form.kcal_item2.selectedIndex=0;		
+}
+function cal_volume3(form){
+	sitem=(form.kcal_item3.options[form.kcal_item3.selectedIndex].value);
+	food = new Option(sitem,sitem);
+	form.selected_display.options[form.selected_display.length]=food;
+	form.cal_volume.value = add_count(sitem);
+	form.kcal_item3.selectedIndex=0;		
+}
+function cal_volume4(form){
+	sitem=(form.kcal_item4.options[form.kcal_item4.selectedIndex].value);
+	food = new Option(sitem,sitem);
+	form.selected_display.options[form.selected_display.length]=food;
+	form.cal_volume.value = add_count(sitem);
+	form.kcal_item4.selectedIndex=0;	
+}
+function cal_volume5(form){
+	sitem = (form.kcal_item5.options[form.kcal_item5.selectedIndex].value);
+	food = new Option(sitem,sitem);
+	form.selected_display.options[form.selected_display.length] = food;
+	form.cal_volume.value = add_count(sitem);
+	form.kcal_item5.selectedIndex=0;	
+}
+function cal_volume6(form){
+	sitem = (form.kcal_item6.options[form.kcal_item6.selectedIndex].value);
+	food = new Option(sitem,sitem);
+	form.selected_display.options[form.selected_display.length] = food;
+	form.cal_volume.value = add_count(sitem);
+	form.kcal_item6.selectedIndex=0;	
+}
+function cal_volume7(form){
+	sitem = (form.kcal_item7.options[form.kcal_item7.selectedIndex].value);
+	food = new Option(sitem,sitem);
+	form.selected_display.options[form.selected_display.length] = food;
+	form.cal_volume.value = add_count(sitem);
+	form.kcal_item7.selectedIndex=0;	
+}
+function cal_volume8(form){
+	sitem = (form.kcal_item8.options[form.kcal_item8.selectedIndex].value);
+	food = new Option(sitem,sitem);
+	form.selected_display.options[form.selected_display.length] = food;
+	form.cal_volume.value = add_count(sitem);
+	form.kcal_item8.selectedIndex=0;	
+}
+function cal_volume9(form){
+	sitem = (form.kcal_item9.options[form.kcal_item9.selectedIndex].value);
+	food = new Option(sitem,sitem);
+	form.selected_display.options[form.selected_display.length] = food;
+	form.cal_volume.value = add_count(sitem);
+	form.kcal_item9.selectedIndex=0;	
+}
+function cal_volume10(form){
+	sitem = (form.kcal_item10.options[form.kcal_item10.selectedIndex].value);
+	food = new Option(sitem,sitem);
+	form.selected_display.options[form.selected_display.length] = food;
+	form.cal_volume.value = add_count(sitem);
+	form.kcal_item10.selectedIndex=0;	
+}
+function cal_volume11(form){
+	sitem = (form.kcal_item11.options[form.kcal_item11.selectedIndex].value);
+	food = new Option(sitem,sitem);
+	form.selected_display.options[form.selected_display.length] = food;
+	form.cal_volume.value = add_count(sitem);
+	form.kcal_item11.selectedIndex=0;	
+}
+function cal_volume12(form){
+	sitem = (form.kcal_item12.options[form.kcal_item12.selectedIndex].value);
+	food = new Option(sitem,sitem);
+	form.selected_display.options[form.selected_display.length] = food;
+	form.cal_volume.value = add_count(sitem);
+	form.kcal_item12.selectedIndex=0;	
+}
+function cal_volume13(form){
+	sitem = (form.kcal_item13.options[form.kcal_item13.selectedIndex].value);
+	food = new Option(sitem,sitem);
+	form.selected_display.options[form.selected_display.length] = food;
+	form.cal_volume.value = add_count(sitem);
+	form.kcal_item13.selectedIndex=0;	
+}
+function cal_volume14(form){
+	sitem = (form.kcal_item14.options[form.kcal_item14.selectedIndex].value);
+	food = new Option(sitem,sitem);
+	form.selected_display.options[form.selected_display.length] = food;
+	form.cal_volume.value = add_count(sitem);
+	form.kcal_item14.selectedIndex=0;	
+}
+function cal_volume15(form){
+	sitem = (form.kcal_item15.options[form.kcal_item15.selectedIndex].value);
+	food = new Option(sitem,sitem);
+	form.selected_display.options[form.selected_display.length] = food;
+	form.cal_volume.value = add_count(sitem);
+	form.kcal_item15.selectedIndex=0;	
+}
+function cal_volume16(form){
+	sitem = (form.kcal_item16.options[form.kcal_item16.selectedIndex].value);
+	food = new Option(sitem,sitem);
+	form.selected_display.options[form.selected_display.length] = food;
+	form.cal_volume.value = add_count(sitem);
+	form.kcal_item16.selectedIndex=0;	
+}
+function cal_volume17(form){
+	sitem = (form.kcal_item17.options[form.kcal_item17.selectedIndex].value);
+	food = new Option(sitem,sitem);
+	form.selected_display.options[form.selected_display.length] = food;
+	form.cal_volume.value = add_count(sitem);
+	form.kcal_item17.selectedIndex=0;	
+}
+function cal_volume18(form){
+	sitem = (form.kcal_item18.options[form.kcal_item18.selectedIndex].value);
+	food = new Option(sitem,sitem);
+	form.selected_display.options[form.selected_display.length] = food;
+	form.cal_volume.value = add_count(sitem);
+	form.kcal_item18.selectedIndex=0;	
+}
+//-->
+</script>
+
+</head>
+
+<body>
+&nbsp; &nbsp; &nbsp;<img src="image/3.jpg" width="400" height="80">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<a href="one.html"><img src="social3.jpg" width="100" height="100" alt="sample"></a>
+
+<form method="post" action="">
+        <table border=0 width=400 cellpadding="2" cellspacing="0">
+          <tr> 
+            <td><font color="#BD701F" ><br>
+              五穀類<br>
+            </font></td>
+            <td><font color="#BD701F"><br>
+              肉類<br>
+            </font></td>
+          </tr>
+          <tr> 
+            <td> 
+              <select name=kcal_item1 onChange="cal_volume1(this.form)" style="width:172px">
+                <option value=0>-- 請選擇 -- 
+                <option value=白飯1碗(263)>白飯1碗(263) 
+                <option value=米粉(乾)100g(360)>米粉(乾)100g(360) 
+                <option value=蛋麵(乾)100g(372)>蛋麵(乾)100g(372) 
+                <option value=河粉100g(203)>河粉100g(203) 
+                <option value=通心粉(乾)100g(368)>通心粉(乾)100g(368) 
+                <option value=意大利粉100g(363)>意大利粉100g(363) 
+                <option value=公仔麵1個(250)>公仔麵1個(250) 
+                <option value=伊麵1個(404)>伊麵1個(404) 
+                <option value=烏冬100g(100)>烏冬100g(100) 
+                <option value=上海麵100g(356)>上海麵100g(356) 
+                <option value=麵線100g(330)>麵線100g(330) 
+                <option value=粉絲100g(350)>粉絲100g(350) 
+                <option value=燕麥片100g(389)>燕麥片100g(389) 
+              </select>
+ </td>
+            <td> 
+              <select name=kcal_item4 onChange="cal_volume4(this.form)" style="width:203px">
+                <option value=0>-- 請選擇 -- 
+                <option value=牛肉100g(114)>牛肉100g(114) 
+                <option value=免治牛肉(淨瘦肉)100g(450)>免治牛肉(淨瘦肉)100g(450) 
+                <option value=免治牛肉(半肥瘦)100g(260)>免治牛肉(半肥瘦)100g(260) 
+                <option value=漢堡牛扒100g(300)>漢堡牛扒100g(300) 
+                <option value=鹹牛肉100g(240)>鹹牛肉100g(240) 
+                <option value=雞肉100g(100)>雞肉100g(100) 
+                <option value=燒雞100g(195)>燒雞100g(195) 
+                <option value=白切雞100g(198)>白切雞100g(198) 
+                <option value=豬肉100g(123)>豬肉100g(123) 
+                <option value=煎豬扒100g(451)>煎豬扒100g(451) 
+                <option value=燒豬脾100g(317)>燒豬脾100g(317) 
+                <option value=香腸100g(326)>香腸100g(326) 
+                <option value=煎煙肉100g(674)>煎煙肉100g(674) 
+                <option value=火腿100g(389)>火腿100g(389) 
+                <option value=午餐肉100g(335)>午餐肉100g(335) 
+                <option value=燒羊脾100g(355)>燒羊脾100g(355) 
+              </select>
+            </td>
+          </tr>
+          <tr> 
+            
+            
+          </tr>
+          <tr> 
+           
+            <td> 
+              
+            </td>
+          </tr>
+          <tr> 
+            <td><font color=#BD701F>蔬菜/蛋類</font></td>
+            <td><font color=#BD701F>快餐店類</font></td>
+          </tr>
+          <tr> 
+            <td> 
+              <select name=kcal_item7 onChange="cal_volume7(this.form)" style="width:172px">
+                <option value=0>-- 請選擇 -- 
+                <option value=蔥100g(47)>蔥100g(47) 
+                <option value=洋蔥100g(35)>洋蔥100g(35) 
+                <option value=大蒜100g(40)>大蒜100g(40) 
+                <option value=馬蹄100g(68)>馬蹄100g(68) 
+                <option value=菜心100g(20)>菜心100g(20) 
+                <option value=白菜100g(17)>白菜100g(17) 
+                <option value=通菜100g(20)>通菜100g(20) 
+                <option value=大芥菜100g(20)>大芥菜100g(20) 
+                <option value=椰菜(熟)100g(15)>椰菜(熟)100g(15) 
+                <option value=西蘭花(熟)100g(18)>西蘭花(熟)100g(18) 
+                <option value=椰菜花(熟)100g(29)>椰菜花(熟)100g(29) 
+                <option value=莧菜(熟)100g(40)>莧菜(熟)100g(40) 
+                <option value=露筍(熟)100g(15)>露筍(熟)100g(15) 
+                <option value=番茄(熟)100g(20)>番茄(熟)100g(20) 
+                <option value=苦瓜(熟)100g(12)>苦瓜(熟)100g(12) 
+                <option value=青豆(熟)100g(68)>青豆(熟)100g(68) 
+                <option value=荷蘭豆(熟)100g(32)>荷蘭豆(熟)100g(32) 
+                <option value=青椒(熟)100g(14)>青椒(熟)100g(14) 
+                <option value=西芹(熟)100g(5)>西芹(熟)100g(5) 
+                <option value=紅蘿蔔(熟)100g(37)>紅蘿蔔(熟)100g(37) 
+                <option value=白蘿蔔(熟)100g(20)>白蘿蔔(熟)100g(20) 
+                <option value=青蘿蔔(熟)100g(23)>青蘿蔔(熟)100g(23) 
+                <option value=薯仔(熟)100g(72)>薯仔(熟)100g(72) 
+                <option value=番薯(熟)100g(115)>番薯(熟)100g(115) 
+                <option value=美國南瓜100g(73)>美國南瓜100g(73) 
+                <option value=日本南瓜100g(35)>日本南瓜100g(35) 
+                <option value=生菜100g(14)>生菜100g(14) 
+                <option value=菠菜100g(19)>菠菜100g(19) 
+                <option value=芽菜100g(20)>芽菜100g(20) 
+                <option value=雪菜100g(60)>雪菜100g(60) 
+                <option value=A菜100g(40)>A菜100g(40) 
+                <option value=豆苗100g(40)>豆苗100g(40) 
+                <option value=番茄100g(14)>番茄100g(14) 
+                <option value=青瓜100g(12)>青瓜100g(12) 
+                <option value=茄瓜100g(26)>茄瓜100g(26) 
+                <option value=絲瓜100g(17)>絲瓜100g(17) 
+                <option value=冬瓜100g(40)>冬瓜100g(40) 
+                <option value=芋頭100g(94)>芋頭100g(94) 
+                <option value=蓮藕100g(52)>蓮藕100g(52) 
+                <option value=海帶100g(36)>海帶100g(36) 
+                <option value=草菇(罐頭)100g(30)>草菇(罐頭)100g(30) 
+                <option value=粟米粒(罐頭)100g(76)>粟米粒(罐頭)100g(76) 
+                <option value=栗子100g(171)>栗子100g(171) 
+                <option value=豆腐100g(160)>豆腐100g(160) 
+                <option value=雞蛋1隻(75)>雞蛋1隻(75) 
+                <option value=蛋白1隻(15)>蛋白1隻(15) 
+                <option value=蛋黃1隻(65)>蛋黃1隻(65) 
+                <option value=鵪鶉蛋1隻(16)>鵪鶉蛋1隻(16) 
+                <option value=皮蛋1隻(160)>皮蛋1隻(160) 
+              </select>
+            </td>
+            <td> 
+              <select name=kcal_item14 onChange="cal_volume14(this.form)" style="width:203px">
+                <option value=0>-- 請選擇 -- 
+                <option value=早晨全餐1份(640)>早晨全餐1份(640) 
+                <option value=熱香餅3件(1320)>熱香餅3件(1320) 
+                <option value=脆薯餅1件(130)>脆薯餅1件(130) 
+                <option value=鬆餅1件(269)>鬆餅1件(269) 
+                <option value=漢堡飽1個(236)>漢堡飽1個(236) 
+                <option value=芝士漢堡1個(320)>芝士漢堡1個(320) 
+                <option value=巨無霸1個(530)>巨無霸1個(530) 
+                <option value=魚柳飽1個(360)>魚柳飽1個(360) 
+                <option value=豬柳蛋漢堡1個(430)>豬柳蛋漢堡1個(430) 
+                <option value=煙肉蛋漢堡1個(280)>煙肉蛋漢堡1個(280) 
+                <option value=照燒豬柳堡1個(460)>照燒豬柳堡1個(460) 
+                <option value=麥香雞1個(510)>麥香雞1個(510) 
+                <option value=麥樂雞1塊(50)>麥樂雞1塊(50) 
+                <option value=薯條(小)1包(220)>薯條(小)1包(220) 
+                <option value=薯條(中)1包(470)>薯條(中)1包(470) 
+                <option value=薯條(大)1包(400)>薯條(大)1包(400) 
+                <option value=炸洋蔥圈1份(355)>炸洋蔥圈1份(355) 
+                <option value=Pizza薄批1件(170)>Pizza薄批1件(170) 
+                <option value=Pizza厚批1件(213)>Pizza厚批1件(213) 
+                <option value=炸雞翼1隻(350)>炸雞翼1隻(350) 
+                <option value=炸雞脾1隻(600)>炸雞脾1隻(600) 
+                <option value=煎豬扒1件(225)>煎豬扒1件(225) 
+                <option value=煎香腸1條(220)>煎香腸1條(220) 
+                <option value=菜絲沙律(小)1杯(300)>菜絲沙律(小)1杯(300) 
+                <option value=罐頭雜果薯仔沙律1碟(350)>罐頭雜果薯仔沙律1碟(350) 
+                <option value=牛油焗薯1個(460)>牛油焗薯1個(460) 
+                <option value=酸忌廉焗薯1個(460)>酸忌廉焗薯1個(460) 
+                <option value=焗薯煙肉芝士1個(590)>焗薯煙肉芝士1個(590) 
+                <option value=蛋沙律三文治1份(300)>蛋沙律三文治1份(300) 
+                <option value=吉士布甸1杯(190)>吉士布甸1杯(190) 
+                <option value=雪糕新地1杯(310)>雪糕新地1杯(310) 
+                <option value=麥樂雞醬1盒(60)>麥樂雞醬1盒(60) 
+              </select>
+            </td>
+          </tr>
+          <tr> 
+            <td><font color=#BD701F>生果類</font></td>
+            <td><font color=#BD701F>茶餐廳類</font></td>
+          </tr>
+          <tr> 
+            <td> 
+              <select name=kcal_item6 onChange="cal_volume6(this.form)" style="width:172px">
+                <option value=0>-- 請選擇 -- 
+                <option value=車厘子1粒(3)>車厘子1粒(3) 
+                <option value=士多啤梨1粒(3)>士多啤梨1粒(3) 
+                <option value=西梅1粒(10)>西梅1粒(10) 
+                <option value=藍梅1粒(6)>藍梅1粒(6) 
+                <option value=葡萄1粒(4)>葡萄1粒(4) 
+                <option value=荔枝1粒(7)>荔枝1粒(7) 
+                <option value=龍眼1粒(3)>龍眼1粒(3) 
+                <option value=蘋果(小)1個(55)>蘋果(小)1個(55) 
+                <option value=雪梨(中)1個(58)>雪梨(中)1個(58) 
+                <option value=橙(小)1個(50)>橙(小)1個(50) 
+                <option value=柑(小)1個(30)>柑(小)1個(30) 
+                <option value=金桔1粒(0.3)>金桔1粒(0.3) 
+                <option value=甜柿1個(80)>甜柿1個(80) 
+                <option value=布林(大)1個(75)>布林(大)1個(75) 
+                <option value=奇異果(中)1個(40)>奇異果(中)1個(40) 
+                <option value=楊桃1個(55)>楊桃1個(55) 
+                <option value=水蜜桃1個(70)>水蜜桃1個(70) 
+                <option value=芒果(中)1個(128)>芒果(中)1個(128) 
+                <option value=牛油果(小)1個(380)>牛油果(小)1個(380) 
+                <option value=西柚1個(40)>西柚1個(40) 
+                <option value=沙田柚1片(20)>沙田柚1片(20) 
+                <option value=番石榴1個(140)>番石榴1個(140) 
+                <option value=枇杷1個(17)>枇杷1個(17) 
+                <option value=檸檬1個(20)>檸檬1個(20) 
+                <option value=香蕉1隻(90)>香蕉1隻(90) 
+                <option value=皇帝蕉1隻(85)>皇帝蕉1隻(85) 
+                <option value=菠蘿(去皮)1片(40)>菠蘿(去皮)1片(40) 
+                <option value=西瓜1片(40)>西瓜1片(40) 
+                <option value=木瓜1片(50)>木瓜1片(50) 
+                <option value=蜜瓜1片(60)>蜜瓜1片(60) 
+                <option value=哈蜜瓜1片(60)>哈蜜瓜1片(60) 
+              </select>
+            </td>
+            <td> 
+              <select name=kcal_item12 onChange="cal_volume12(this.form)" style="width:203px">
+                <option value=0>-- 請選擇 -- 
+                <option value=西多士1份(1175)>西多士1份(1175) 
+                <option value=熱狗1隻(255)>熱狗1隻(255) 
+                <option value=奶油多士1片(218)>奶油多士1片(218) 
+                <option value=奶醬多士1片(194)>奶醬多士1片(194) 
+                <option value=公司三文治1客(480)>公司三文治1客(480) 
+                <option value=火腿蛋三文治1份(420)>火腿蛋三文治1份(420) 
+                <option value=雞蛋三文治1份(343)>雞蛋三文治1份(343) 
+                <option value=炒蛋1隻(95)>炒蛋1隻(95) 
+                <option value=煎蛋1隻(105)>煎蛋1隻(105) 
+                <option value=荷包蛋1隻(80)>荷包蛋1隻(80) 
+                <option value=火腿煎雙蛋1份(300)>火腿煎雙蛋1份(300) 
+                <option value=餐肉腸公仔麵1碗(770)>餐肉腸公仔麵1碗(770) 
+                <option value=沙爹牛肉麵1碗(605)>沙爹牛肉麵1碗(605) 
+                <option value=火腿通粉1碗(270)>火腿通粉1碗(270) 
+                <option value=炸雞脾飯1碟(800)>炸雞脾飯1碟(800) 
+                <option value=豬扒飯1碟(548)>豬扒飯1碟(548) 
+                <option value=西炒飯1碟(710)>西炒飯1碟(710) 
+                <option value=菜遠排骨飯1碟(524)>菜遠排骨飯1碟(524) 
+                <option value=粟米肉粒飯1碟(560)>粟米肉粒飯1碟(560) 
+                <option value=海鮮炒烏冬1碟(580)>海鮮炒烏冬1碟(580) 
+              </select>
+            </td>
+          </tr>
+          <tr> 
+            <td><font color=#BD701F>海產類</font></td>
+            <td><font color=#BD701F>粥麵類</font></td>
+          </tr>
+          <tr> 
+            <td> 
+              <select name=kcal_item5 onChange="cal_volume5(this.form)" style="width:203px">
+                <option value=0>-- 請選擇 -- 
+                <option value=魚柳100g(95)>魚柳100g(95) 
+                <option value=三文魚100g(130)>三文魚100g(130) 
+                <option value=鰻魚100g(340)>鰻魚100g(340) 
+                <option value=鱈魚100g(75)>鱈魚100g(75) 
+                <option value=比目魚100g(90)>比目魚100g(90) 
+                <option value=秋刀魚100g(240)>秋刀魚100g(240) 
+                <option value=黃花魚100g(62)>黃花魚100g(62) 
+                <option value=蝦肉100g(90)>蝦肉100g(90) 
+                <option value=蜆肉100g(50)>蜆肉100g(50) 
+                <option value=龍蝦100g(100)>龍蝦100g(100) 
+                <option value=帶子100g(100)>帶子100g(100) 
+                <option value=墨魚100g(50)>墨魚100g(50) 
+                <option value=蟹肉100g(90)>蟹肉100g(90) 
+                <option value=蝦米100g(195)>蝦米100g(195) 
+                <option value=罐頭沙甸魚(335)>罐頭沙甸魚(335) 
+                <option value=罐頭吞拿魚(油浸)100g(200)>罐頭吞拿魚(油浸)100g(200) 
+                <option value=罐頭吞拿魚(鹽水)100g(100)>罐頭吞拿魚(鹽水)100g(100) 
+              </select>
+            </td>
+            <td> 
+              <select name=kcal_item13 onChange="cal_volume13(this.form)" style="width:203px">
+                <option value=0>-- 請選擇 -- 
+                <option value=白粥1碗(88)>白粥1碗(88) 
+                <option value=潮州粥1碗(132)>潮州粥1碗(132) 
+                <option value=碎肉粥1碗(165)>碎肉粥1碗(165) 
+                <option value=魚片粥1碗(234)>魚片粥1碗(234) 
+                <option value=及第粥1碗(270)>及第粥1碗(270) 
+                <option value=皮蛋瘦肉粥1碗(260)>皮蛋瘦肉粥1碗(260) 
+                <option value=鮮牛肉粥1碗(247)>鮮牛肉粥1碗(247) 
+                <option value=艇仔粥1碗(260)>艇仔粥1碗(260) 
+                <option value=柴魚花生豬肉粥1碗(300)>柴魚花生豬肉粥1碗(300) 
+                <option value=炒麵1碟(911)>炒麵1碟(911) 
+                <option value=淨米粉1碗(173)>淨米粉1碗(173) 
+                <option value=牛肉麵1碗(470)>牛肉麵1碗(470) 
+                <option value=排骨麵1碗(480)>排骨麵1碗(480) 
+                <option value=肉絲麵1碗(400)>肉絲麵1碗(400) 
+                <option value=水餃麵1碗(360)>水餃麵1碗(360) 
+                <option value=墨丸麵1碗(316)>墨丸麵1碗(316) 
+                <option value=牛腩麵1碗(480)>牛腩麵1碗(480) 
+                <option value=魚蛋粉1碗(320)>魚蛋粉1碗(320) 
+                <option value=牛丸麵1碗(426)>牛丸麵1碗(426) 
+                <option value=雲吞麵1碗(400)>雲吞麵1碗(400) 
+                <option value=牛腩撈麵1碗(670)>牛腩撈麵1碗(670) 
+                <option value=粢飯1條(310)>粢飯1條(310) 
+                <option value=淨水餃1碗(535)>淨水餃1碗(535) 
+                <option value=油條1條(70)>油條1條(70) 
+                <option value=灼油菜1碟(140)>灼油菜1碟(140) 
+              </select>
+              <a name="kcal"></a> </td>
+          </tr>
+          <tr> 
+            <td><font color=#BD701F>中式食肆類</font></td>
+            <td><font color=#BD701F>麵飽/蛋糕類</font></td>
+          </tr>
+          <tr> 
+            <td> 
+              <select name=kcal_item8 onChange="cal_volume8(this.form)" style="width:172px">
+                <option value=0>-- 請選擇 -- 
+                <option value=炒鮮魷1份(159)>炒鮮魷1份(159) 
+                <option value=炒三鮮1份(427)>炒三鮮1份(427) 
+                <option value=金銀蛋莧菜1份(140)>金銀蛋莧菜1份(140) 
+                <option value=清炒芥蘭6棵(20)>清炒芥蘭6棵(20) 
+                <option value=青椒雞肉1份(137)>青椒雞肉1份(137) 
+                <option value=薯仔煮牛肉1份(232)>薯仔煮牛肉1份(232) 
+                <option value=蠔油金菇1份(130)>蠔油金菇1份(130) 
+                <option value=蒸釀豆腐1件(65)>蒸釀豆腐1件(65) 
+                <option value=甜酸排骨1份(600)>甜酸排骨1份(600) 
+                <option value=麻婆豆腐1份(349)>麻婆豆腐1份(349) 
+                <option value=蔥爆豬肉1份(536)>蔥爆豬肉1份(536) 
+                <option value=豉汁蒸魚倉魚1份(113)>豉汁蒸魚倉魚1份(113) 
+                <option value=青椒炒牛肉1份(228)>青椒炒牛肉1份(228) 
+                <option value=梅菜蒸大魚腩1份(76)>梅菜蒸大魚腩1份(76) 
+                <option value=青豆蝦仁1份(133)>青豆蝦仁1份(133) 
+                <option value=白灼中蝦1隻(11)>白灼中蝦1隻(11) 
+                <option value=瘦叉燒100g(300)>瘦叉燒100g(300) 
+                <option value=半肥瘦叉燒100g(400)>半肥瘦叉燒100g(400) 
+                <option value=燒肉100g(420)>燒肉100g(420) 
+                <option value=半肥瘦燒肉100g(331)>半肥瘦燒肉100g(331) 
+                <option value=白切雞100g(198)>白切雞100g(198) 
+                <option value=去皮白切雞100g(148)>去皮白切雞100g(148) 
+                <option value=燒鴨100g(297)>燒鴨100g(297) 
+                <option value=燒雞100g(195)>燒雞100g(195) 
+              </select>
+            </td>
+            <td> 
+              <select name=kcal_item16 onChange="cal_volume16(this.form)" style="width:203px">
+                <option value=0>-- 請選擇 -- 
+                <option value=白麵飽1片(75)>白麵飽1片(75) 
+                <option value=全麥麵飽1片(65)>全麥麵飽1片(65) 
+                <option value=法國麵飽1片(44)>法國麵飽1片(44) 
+                <option value=意大利麵飽1片(83)>意大利麵飽1片(83) 
+                <option value=合桃方包1片(130)>合桃方包1片(130) 
+                <option value=軟豬仔包1個(169)>軟豬仔包1個(169) 
+                <option value=芝麻麥包1個(94)>芝麻麥包1個(94) 
+                <option value=芝麻包1個(169)>芝麻包1個(169) 
+                <option value=麥包1個(94)>麥包1個(94) 
+                <option value=餐包1個(150)>餐包1個(150) 
+                <option value=朱古力榛子包1個(151)>朱古力榛子包1個(151) 
+                <option value=腸仔包1個(160)>腸仔包1個(160) 
+                <option value=午餐肉包1個(213)>午餐肉包1個(213) 
+                <option value=吞拿魚包1個(134)>吞拿魚包1個(134) 
+                <option value=叉燒包1個(194)>叉燒包1個(194) 
+                <option value=芝士火腿粟米包1個(295)>芝士火腿粟米包1個(295) 
+                <option value=Pizza麵包1個(300)>Pizza麵包1個(300) 
+                <option value=菠蘿包1個(235)>菠蘿包1個(235) 
+                <option value=雞尾包1個(221)>雞尾包1個(221) 
+                <option value=提子包1個(169)>提子包1個(169) 
+                <option value=紅豆包1個(335)>紅豆包1個(335) 
+                <option value=花生包1個(300)>花生包1個(300) 
+                <option value=蜜糖冬甩1件(186)>蜜糖冬甩1件(186) 
+                <option value=朱古力冬甩1件(268)>朱古力冬甩1件(268) 
+                <option value=丹麥酥1個(160)>丹麥酥1個(160) 
+                <option value=咖喱酥角1個(385)>咖喱酥角1個(385) 
+                <option value=雞批1件(300)>雞批1件(300) 
+                <option value=蘋果批1件(269)>蘋果批1件(269) 
+                <option value=牛角包1個(160)>牛角包1個(160) 
+                <option value=大理石包1個(150)>大理石包1個(150) 
+                <option value=蛋撻1件(220)>蛋撻1件(220) 
+                <option value=葡撻1件(240)>葡撻1件(240) 
+                <option value=椰撻1件(280)>椰撻1件(280) 
+                <option value=鮮果撻1件(350)>鮮果撻1件(350) 
+                <option value=紙包蛋糕1件(120)>紙包蛋糕1件(120) 
+                <option value=合桃蛋糕1片(320)>合桃蛋糕1片(320) 
+                <option value=提子蛋糕1片(320)>提子蛋糕1片(320) 
+                <option value=水果忌廉蛋糕1件(240)>水果忌廉蛋糕1件(240) 
+                <option value=栗子忌廉蛋糕1件(240)>栗子忌廉蛋糕1件(240) 
+                <option value=黑森林蛋糕1件(275)>黑森林蛋糕1件(275) 
+                <option value=芝士蛋糕1件(267)>芝士蛋糕1件(267) 
+              </select>
+            </td>
+          </tr>
+          <tr> 
+            <td><font color=#BD701F>西餐類</font></td>
+            <td><font color=#BD701F>飲品/酒類</font></td>
+          </tr>
+          <tr> 
+            <td> 
+              <select name=kcal_item10 onChange="cal_volume10(this.form)" style="width:172px">
+                <option value=0>-- 請選擇 -- 
+                <option value=羅宋湯1碗(126)>羅宋湯1碗(126) 
+                <option value=粟米忌廉湯1碗(157)>粟米忌廉湯1碗(157) 
+                <option value=酥皮湯1碗(450)>酥皮湯1碗(450) 
+                <option value=煎蛋1隻(136)>煎蛋1隻(136) 
+                <option value=吞拿魚炒律1份(220)>吞拿魚炒律1份(220) 
+                <option value=豌豆蝦沙律1份(70)>豌豆蝦沙律1份(70) 
+                <option value=薯仔沙律1份(430)>薯仔沙律1份(430) 
+                <option value=雞蛋飯1份(896)>雞蛋飯1份(896) 
+                <option value=焗雞皇飯1份(483)>焗雞皇飯1份(483) 
+                <option value=粟米雞粒飯1份(383)>粟米雞粒飯1份(383) 
+                <option value=咖喱雞粉1份(764)>咖喱雞粉1份(764) 
+                <option value=意式肉醬意粉1份(599)>意式肉醬意粉1份(599) 
+                <option value=番茄雞絲意粉1份(220)>番茄雞絲意粉1份(220) 
+                <option value=焗豬扒意粉1份(363)>焗豬扒意粉1份(363) 
+                <option value=雜菌意粉1份(462)>雜菌意粉1份(462) 
+                <option value=公司三文治1份(447)>公司三文治1份(447) 
+                <option value=燒牛肉三文治1份(400)>燒牛肉三文治1份(400) 
+                <option value=吞拿魚三文治1份(330)>吞拿魚三文治1份(330) 
+                <option value=炸雞藍1份(780)>炸雞藍1份(780) 
+                <option value=漢堡牛扒1份(698)>漢堡牛扒1份(698) 
+                <option value=煙三文魚100g(130)>煙三文魚100g(130) 
+                <option value=生蠔100g(14)>生蠔100g(14) 
+                <option value=燒牛肉100g(18)>燒牛肉100g(18) 
+              </select>
+            </td>
+            <td> 
+              <select name=kcal_item18 onChange="cal_volume18(this.form)" style="width:203px">
+                <option value=0>-- 請選擇 -- 
+                <option value=清水(0)>清水(0) 
+                <option value=茶1杯(1)>茶1杯(1) 
+                <option value=鮮橙汁1杯(165)>鮮橙汁1杯(165) 
+                <option value=鮮蘋果汁1杯(120)>鮮蘋果汁1杯(120) 
+                <option value=鮮菠蘿汁1杯(140)>鮮菠蘿汁1杯(140) 
+                <option value=鮮檸檬汁1杯(60)>鮮檸檬汁1杯(60) 
+                <option value=鮮提子汁1杯(140)>鮮提子汁1杯(140) 
+                <option value=鮮西柚汁1杯(100)>鮮西柚汁1杯(100) 
+                <option value=鮮番茄汁1杯(45)>鮮番茄汁1杯(45) 
+                <option value=鮮西梅汁1杯(180)>鮮西梅汁1杯(180) 
+                <option value=鮮甘蔗汁1杯(100)>鮮甘蔗汁1杯(100) 
+                <option value=濃縮提子汁1杯(395)>濃縮提子汁1杯(395) 
+                <option value=濃縮菠蘿汁1杯(500)>濃縮菠蘿汁1杯(500) 
+                <option value=濃縮蘋果汁1杯(445)>濃縮蘋果汁1杯(445) 
+                <option value=珍珠奶茶1杯(180)>珍珠奶茶1杯(180) 
+                <option value=黑咖啡1杯(5)>黑咖啡1杯(5) 
+                <option value=咖啡(加奶、糖)1杯(150)>咖啡(加奶、糖)1杯(150) 
+                <option value=紅茶(無糖、奶)1杯(1)>紅茶(無糖、奶)1杯(1) 
+                <option value=紅茶(加糖、奶)1杯(150)>紅茶(加糖、奶)1杯(150) 
+                <option value=酸梅湯1杯(190)>酸梅湯1杯(190) 
+                <option value=果菜汁1罐(72)>果菜汁1罐(72) 
+                <option value=無糖烏龍茶1罐(0)>無糖烏龍茶1罐(0) 
+                <option value=西班牙咖啡1杯(226)>西班牙咖啡1杯(226) 
+                <option value=紅豆冰1杯(350)>紅豆冰1杯(350) 
+                <option value=甜豆漿1杯(120)>甜豆漿1杯(120) 
+                <option value=低脂奶1盒(125)>低脂奶1盒(125) 
+                <option value=鮮奶1盒(143)>鮮奶1盒(143) 
+                <option value=淡奶1茶匙(8)>淡奶1茶匙(8) 
+                <option value=煉奶1茶匙(23)>煉奶1茶匙(23) 
+                <option value=全脂即溶奶粉1杯(506)>全脂即溶奶粉1杯(506) 
+                <option value=低脂即溶奶粉1杯(397)>低脂即溶奶粉1杯(397) 
+                <option value=脫脂即溶奶粉1杯(356)>脫脂即溶奶粉1杯(356) 
+                <option value=維他奶1盒(120)>維他奶1盒(120) 
+                <option value=益力多1支(100)>益力多1支(100) 
+                <option value=菊花茶1盒(90)>菊花茶1盒(90) 
+                <option value=健怡可樂1罐(39)>健怡可樂1罐(39) 
+                <option value=可樂1罐(178)>可樂1罐(178) 
+                <option value=芬達1罐(190)>芬達1罐(190) 
+                <option value=雪碧1罐(147)>雪碧1罐(147) 
+                <option value=沙示1罐(128)>沙示1罐(128) 
+                <option value=蜂蜜綠茶1罐(52)>蜂蜜綠茶1罐(52) 
+                <option value=寶礦力1罐(88)>寶礦力1罐(88) 
+                <option value=葡萄適(小)1樽(198)>葡萄適(小)1樽(198) 
+                <option value=凍檸檬茶1杯(58)>凍檸檬茶1杯(58) 
+                <option value=蜜糖1杯(90)>蜜糖1杯(90) 
+                <option value=阿華田1杯(45)>阿華田1杯(45) 
+                <option value=好立克1杯(59)>好立克1杯(59) 
+                <option value=朱古力奶昔1杯(364)>朱古力奶昔1杯(364) 
+                <option value=雲呢拿奶昔1杯(323)>雲呢拿奶昔1杯(323) 
+                <option value=士多啤梨奶昔1杯(345)>士多啤梨奶昔1杯(345) 
+                <option value=蘋果梳打1罐(147)>蘋果梳打1罐(147) 
+                <option value=蘋果梳打酒1罐(167)>蘋果梳打酒1罐(167) 
+                <option value=有汽梅酒1罐(165)>有汽梅酒1罐(165) 
+                <option value=啤酒1罐(95)>啤酒1罐(95) 
+                <option value=生啤1罐(151)>生啤1罐(151) 
+                <option value=黑啤1罐(160)>黑啤1罐(160) 
+                <option value=餐後酒1杯(140)>餐後酒1杯(140) 
+                <option value=紅酒1杯(83)>紅酒1杯(83) 
+                <option value=白酒1杯(83)>白酒1杯(83) 
+                <option value=烈酒(40%酒精含量)1杯(95)>烈酒(40%酒精含量)1杯(95) 
+                <option value=清酒1杯(106)>清酒1杯(106) 
+                <option value=香檳1杯(190)>香檳1杯(190) 
+              </select>
+            </td>
+          </tr>
+          <tr> 
+            <td><font color=#BD701F>日本料理類</font></td>
+            <td><font color=#BD701F>即食食品/零食類</font></td>
+          </tr>
+          <tr> 
+            <td> 
+              <select name=kcal_item11 onChange="cal_volume11(this.form)" style="width:172px">
+                <option value=0>-- 請選擇 -- 
+                <option value=麵豉湯1碗(80)>麵豉湯1碗(80) 
+                <option value=蟹籽壽司2件(106)>蟹籽壽司2件(106) 
+                <option value=明蝦壽司2件(104)>明蝦壽司2件(104) 
+                <option value=帶子壽司2件(102)>帶子壽司2件(102) 
+                <option value=赤貝壽司2件(100)>赤貝壽司2件(100) 
+                <option value=三文魚壽司2件(175)>三文魚壽司2件(175) 
+                <option value=八爪魚壽司2件(100)>八爪魚壽司2件(100) 
+                <option value=甜蛋壽司2件(85)>甜蛋壽司2件(85) 
+                <option value=吞拿魚壽司2件(130)>吞拿魚壽司2件(130) 
+                <option value=三文魚子壽司2件(100)>三文魚子壽司2件(100) 
+                <option value=海膽壽司2件(126)>海膽壽司2件(126) 
+                <option value=三文魚刺身100g(160)>三文魚刺身100g(160) 
+                <option value=八爪魚刺身100g(94)>八爪魚刺身100g(94) 
+                <option value=海膽刺身100g(145)>海膽刺身100g(145) 
+                <option value=刺身定食1份(529)>刺身定食1份(529) 
+                <option value=炸豬扒定食1份(818)>炸豬扒定食1份(818) 
+                <option value=薑汁豬肉定食1份(707)>薑汁豬肉定食1份(707) 
+                <option value=鹽燒魚定食1份(425)>鹽燒魚定食1份(425) 
+                <option value=九州拉麵1碗(583)>九州拉麵1碗(583) 
+                <option value=中華拉麵1碗(449)>中華拉麵1碗(449) 
+                <option value=日式叉燒拉麵1碗(605)>日式叉燒拉麵1碗(605) 
+                <option value=麵豉湯麵1碗(360)>麵豉湯麵1碗(360) 
+                <option value=炸蝦湯麵1碗(595)>炸蝦湯麵1碗(595) 
+                <option value=日式冷麵1碗(260)>日式冷麵1碗(260) 
+                <option value=鰻魚飯1份(602)>鰻魚飯1份(602) 
+                <option value=咖喱豬扒飯1份(764)>咖喱豬扒飯1份(764) 
+                <option value=日式海鮮炒飯1份(540)>日式海鮮炒飯1份(540) 
+                <option value=鐵板炒烏冬1份(622)>鐵板炒烏冬1份(622) 
+                <option value=天婦羅1份(350)>天婦羅1份(350) 
+                <option value=枝豆1份(88)>枝豆1份(88) 
+                <option value=炸豆腐1件(128)>炸豆腐1件(128) 
+                <option value=京風炸豆腐1件(166)>京風炸豆腐1件(166) 
+                <option value=煎餃子1件(48)>煎餃子1件(48) 
+                <option value=京燒銀鱈魚1份(326)>京燒銀鱈魚1份(326) 
+                <option value=燒秋刀魚1份(226)>燒秋刀魚1份(226) 
+                <option value=天婦羅丼1份(767)>天婦羅丼1份(767) 
+                <option value=茶碗蒸1碗(93)>茶碗蒸1碗(93) 
+                <option value=金菇牛肉卷1件(118)>金菇牛肉卷1件(118) 
+                <option value=醬汁雞串燒1串(180)>醬汁雞串燒1串(180) 
+                <option value=醬汁豬肉串燒1串(220)>醬汁豬肉串燒1串(220) 
+              </select>
+            </td>
+            <td> 
+              <select name=kcal_item15 onChange="cal_volume15(this.form)" style="width:203px">
+                <option value=0>-- 請選擇 -- 
+                <option value=熱狗腸1條(189)>熱狗腸1條(189) 
+                <option value=茶葉蛋1隻(73)>茶葉蛋1隻(73) 
+                <option value=魚蛋1串(100)>魚蛋1串(100) 
+                <option value=碗仔翅1碗(240)>碗仔翅1碗(240) 
+                <option value=雞蛋仔1底(240)>雞蛋仔1底(240) 
+                <option value=罐頭粟米湯1碗(260)>罐頭粟米湯1碗(260) 
+                <option value=芝士餅1片(90)>芝士餅1片(90) 
+                <option value=消化餅1片(70)>消化餅1片(70) 
+                <option value=加鈣營養餅1片(31)>加鈣營養餅1片(31) 
+                <option value=朱古力夾心餅1片(55)>朱古力夾心餅1片(55) 
+                <option value=克力架1片(32)>克力架1片(32) 
+                <option value=甜餅1片(27)>甜餅1片(27) 
+                <option value=甜全麥餅1片(41)>甜全麥餅1片(41) 
+                <option value=朱古力條1條(1108)>朱古力條1條(1108) 
+                <option value=純味百力滋1盒(250)>純味百力滋1盒(250) 
+                <option value=士多啤梨百力滋1盒(575)>士多啤梨百力滋1盒(575) 
+                <option value=樂天熊仔餅1盒(350)>樂天熊仔餅1盒(350) 
+                <option value=牛奶朱古力1粒(45)>牛奶朱古力1粒(45) 
+                <option value=甘脆朱古力1粒(52)>甘脆朱古力1粒(52) 
+                <option value=三角朱古力1粒(42)>三角朱古力1粒(42) 
+                <option value=薄荷朱古力1粒(31)>薄荷朱古力1粒(31) 
+                <option value=M&M牛奶朱古力1粒(9)>M&M牛奶朱古力1粒(9) 
+                <option value=M&M花生朱古力1粒(12)>M&M花生朱古力1粒(12) 
+                <option value=萬樂珠1粒(9)>萬樂珠1粒(9) 
+                <option value=瑞士糖1粒(13)>瑞士糖1粒(13) 
+                <option value=鳳梨酥1個(160)>鳳梨酥1個(160) 
+                <option value=薯片100g(555)>薯片100g(555) 
+                <option value=爆谷100g(459)>爆谷100g(459) 
+                <option value=花生100g(370)>花生100g(370) 
+                <option value=腰果100g(554)>腰果100g(554) 
+                <option value=開心果100g(600)>開心果100g(600) 
+                <option value=夏威夷果仁100g(667)>夏威夷果仁100g(667) 
+                <option value=合桃100g(667)>合桃100g(667) 
+                <option value=杏仁100g(572)>杏仁100g(572) 
+                <option value=白瓜子100g(572)>白瓜子100g(572) 
+                <option value=黑瓜子100g(534)>黑瓜子100g(534) 
+                <option value=提子乾100g(320)>提子乾100g(320) 
+                <option value=話梅1粒(15)>話梅1粒(15) 
+                <option value=蒟蒻椰果1粒(40)>蒟蒻椰果1粒(40) 
+                <option value=咖啡凍1粒(100)>咖啡凍1粒(100) 
+                <option value=茉莉茶凍1粒(97)>茉莉茶凍1粒(97) 
+                <option value=魷魚絲100g(330)>魷魚絲100g(330) 
+                <option value=牛肉乾100g(475)>牛肉乾100g(475) 
+                <option value=肉鬆100g(467)>肉鬆100g(467) 
+              </select>
+            </td>
+          </tr>
+       
+          <tr> 
+            <td> 
+             
+            </td>
+            
+          </tr>
+        </table>
+        <table border=0 width=400 cellpadding="0" cellspacing="0">
+          <tr>
+            <td><select name="selected_display" size="10" onChange="delete_item(this.form)" style="width:400px">
+              <option value="selected" style="color: #99995B">你選擇的食物:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+              </select>
+              <br>
+            <td>你的熱量攝取為：
+                <input type="text" name="cal_volume" value=0 size=10>
+              卡路里</td> </td>
+          </tr>
+        </table>
+        <p> 
+        </form>
+</body>
+</html>

@@ -1,0 +1,266 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>計算食物熱量</title>
+   <script language="JavaScript">
+<!--
+
+function isFilled(a){
+  if(a.value == "" || a.value == null){
+    return false;
+  }else{
+    return true;
+  }
+}
+
+function isNum(x){
+  var testnum = x.value + "";
+  var flag = 0;
+  if(testnum.length = 1 && testnum == ".") return false;
+  for(var i = 0; i < testnum.length; i++){
+    
+    if(testnum.charAt(i) < "0" || testnum.charAt(i) > "9"){
+       if(testnum.charAt(i) == "."){
+         flag += 1;
+       }
+       else{
+         return false;
+       }
+     }
+   if(flag > 1) return false;
+  }
+  return true;
+} 
+function ro(x){
+  x = Math.round(x * 100) / 100;
+  return x;
+}
+function calculateBEE(beeform){
+  if(beeform.gender2[0].checked){
+    if(document.beeform.age.selectedIndex==0){
+      beeform.beeResult.value = ro((60.9 * beeform.weight3.value) - 54);
+    }
+    else if(document.beeform.age.selectedIndex==1){
+      beeform.beeResult.value = ro((22.7 * beeform.weight3.value) - 495);
+    }
+    else if(document.beeform.age.selectedIndex==2){
+      beeform.beeResult.value = ro((17.5 * beeform.weight3.value) + 651);
+    }
+    else if(document.beeform.age.selectedIndex==3){
+      beeform.beeResult.value = ro((15.3 * beeform.weight3.value) + 679);
+    }
+    else if(document.beeform.age.selectedIndex==4){
+      beeform.beeResult.value = ro((11.6 * beeform.weight3.value) + 879);
+    }
+    else if(document.beeform.age.selectedIndex==5){
+      beeform.beeResult.value = ro((13.5 * beeform.weight3.value) + 487);
+    }
+  }
+  else{
+    if(document.beeform.age.selectedIndex==0){
+      beeform.beeResult.value = ro((61 * beeform.weight3.value) - 51);
+    }
+    else if(document.beeform.age.selectedIndex==1){
+      beeform.beeResult.value = ro((22.5 * beeform.weight3.value) + 499);
+    }
+    else if(document.beeform.age.selectedIndex==2){
+      beeform.beeResult.value = ro((12.2 * beeform.weight3.value) + 746);
+    }
+    else if(document.beeform.age.selectedIndex==3){
+      beeform.beeResult.value = ro((14.7 * beeform.weight3.value) + 496);
+    }
+    else if(document.beeform.age.selectedIndex==4){
+      beeform.beeResult.value = ro((8.7 * beeform.weight3.value) + 829);
+    }
+    else if(document.beeform.age.selectedIndex==5){
+	  beeform.beeResult.value = ro((10.5 * beeform.weight3.value) + 596);
+    }
+  }
+}
+    
+function calculateEnergy(beeform){
+  if(beeform.gender2[0].checked){
+    if(document.beeform.level.options[document.beeform.level.selectedIndex].value=="light"){    
+      beeform.energy.value = ro(beeform.beeResult.value * 1.55);
+      var low = beeform.beeResult.value * 1.55 + 500;
+      var high = beeform.beeResult.value * 1.55 + 1000;
+      beeform.gain.value = ro(low) + " - " + ro(high);
+      var low1 = beeform.beeResult.value * 1.55 - 1000;
+      var high1 = beeform.beeResult.value * 1.55 - 500;
+      beeform.loss.value = ro(low1) + " - " + ro(high1);
+    }
+    if(document.beeform.level.options[document.beeform.level.selectedIndex].value=="moderate"){    
+      beeform.energy.value = ro(beeform.beeResult.value * 1.78);
+      var low = beeform.beeResult.value * 1.78 + 500;
+      var high = beeform.beeResult.value * 1.78 + 1000;
+      beeform.gain.value = ro(low) + " - " + ro(high);
+      var low1 = beeform.beeResult.value * 1.78 - 1000;
+      var high1 = beeform.beeResult.value * 1.78 - 500;
+      beeform.loss.value = ro(low1) + " - " + ro(high1);
+    }
+    if(document.beeform.level.options[document.beeform.level.selectedIndex].value=="heavy"){    
+      beeform.energy.value = ro(beeform.beeResult.value * 2.10);
+      var low = beeform.beeResult.value * 2.10 + 500;
+      var high = beeform.beeResult.value * 2.10 + 1000;
+      beeform.gain.value = ro(low) + " - " + ro(high);
+      var low1 = beeform.beeResult.value * 2.10 - 1000;
+      var high1 = beeform.beeResult.value * 2.10 - 500;
+      beeform.loss.value = ro(low1) + " - " + ro(high1);
+    } 
+  }
+  else{
+    if(document.beeform.level.options[document.beeform.level.selectedIndex].value == "light"){ 
+      beeform.energy.value = ro(beeform.beeResult.value * 1.56);
+      var low = beeform.beeResult.value * 1.56 + 500;
+      var high = beeform.beeResult.value * 1.56 + 1000;
+      beeform.gain.value = ro(low) + " - " + ro(high);
+      var low1 = beeform.beeResult.value * 1.56 - 1000;
+      var high1 = beeform.beeResult.value * 1.56 - 500;
+      beeform.loss.value = ro(low1) + " - " + ro(high1);
+    }
+    if(document.beeform.level.options[document.beeform.level.selectedIndex].value=="moderate"){    
+      beeform.energy.value = ro(beeform.beeResult.value * 1.64);
+      var low = beeform.beeResult.value * 1.64 + 500;
+      var high = beeform.beeResult.value * 1.64 + 1000;
+      beeform.gain.value = ro(low) + " - " + ro(high);
+      var low1 = beeform.beeResult.value * 1.64 - 1000;
+      var high1 = beeform.beeResult.value * 1.64 - 500;
+      beeform.loss.value = ro(low1) + " - " + ro(high1);
+    }
+    if(document.beeform.level.options[document.beeform.level.selectedIndex].value=="heavy"){    
+      beeform.energy.value = ro(beeform.beeResult.value * 1.82);
+      var low = beeform.beeResult.value * 1.82 + 500;
+      var high = beeform.beeResult.value * 1.82 + 1000;
+      beeform.gain.value = ro(low) + " - " + ro(high);
+      var low1 = beeform.beeResult.value * 1.82 - 1000;
+      var high1 = beeform.beeResult.value * 1.82 - 500;
+      beeform.loss.value = ro(low1) + " - " + ro(high1);
+    } 
+  }
+}
+
+function energylevel(beeform){
+  calculateBEE(beeform);
+  calculateEnergy(beeform);
+}
+function isValidBEE(beeform){
+  if(isFilled(beeform.weight3) == false){
+    alert("Please enter a value for Body Weight. e.g. 44.5");
+    beeform.weight3.focus();
+    return false;
+  }
+  if(isNum(beeform.weight3) == false){
+    alert("Please enter a valid number for Body Weight. e.g. 40 or 44.5");
+    beeform.weight3.focus();
+    return false;
+  }
+  calculateBEE(beeform);
+}
+
+function isValid(beeform){
+  if(isFilled(beeform.weight3) == false){
+    alert("Please enter a value for Body Weight. e.g. 44.5");
+    beeform.weight3.focus();
+    return false;
+  }
+  if(isNum(beeform.weight3) == false){
+    alert("Please enter a valid number for Body Weight. e.g. 40 or 44.5");
+    beeform.weight3.focus();
+    return false;
+  }
+  energylevel(beeform);
+}
+
+//-->
+</script>
+
+</head>
+
+<body>
+&nbsp; &nbsp; &nbsp;<img src="image/4.jpg" width="400" height="150">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<a href="one.html"><img src="social3.jpg" width="100" height="100" alt="sample"></a>
+
+<form method="post" action="" name="beeform">
+        <table width="380" border="0" cellpadding="2" cellspacing="2">
+          <tr> 
+            <td><font class="text10pt">性別： </font></td>
+            <td><font class="text10pt">
+              <input type="radio" name="gender2" value="male">
+              男
+              <input type="radio" name="gender2" value="female" checked>
+              女</font></td>
+          </tr>
+          <tr> 
+            <td><font class="text10pt">體重：</font></td>
+            <td><font class="text10pt">
+              <input type="text" name="weight3" size="10">
+              公斤</font></td>
+          </tr>
+          <tr> 
+            <td nowrap><font class="text10pt">年齡：</font></td>
+            <td nowrap><font class="text10pt"> 
+              <select name="age">
+                <option value="0">0-3</option>
+                <option value="1">>3-10</option>
+                <option value="2">>10-18</option>
+                <option value="3">>18-30</option>
+                <option value="4">>30-60</option>
+                <option value="5">>60</option>
+              </select>
+              <input type="button" name="beebutton1" value="計算" onClick="isValidBEE(beeform);">
+              </font> </td>
+          </tr>
+          <tr> 
+            <td><font class="text10pt">基本代謝率<br>
+              (每天所需的卡路里)：</font></td>
+            <td><font class="text10pt">
+              <input type="text" name="beeResult" onFocus="this.blur();" style="background:#EBEBC4" size="10">
+              卡路里/天</font></td>
+          </tr>
+          <tr>
+            <td>　</td>
+          </tr>
+          <tr> 
+            <td colspan=2>接著可根據上述資料簡單計算出<b>每天熱量需要</b><br>
+            </td>
+          </tr>
+          <tr> 
+            <td><font class="text10pt">活動量：</font></td>
+            <td><font class="text10pt">*</font> 
+              <select name="level">
+                <option value="light"><font class="text10pt"> 輕 量 </font></option>
+                <option value="moderate"><font class="text10pt"> 中 量 </font></option>
+                <option value="heavy"><font class="text10pt"> 大 量 </font></option>
+              </select>
+              <input type="button" name="beebutton2" value="計算" onClick="isValid(beeform);">
+            </td>
+          </tr>
+          <tr> 
+            <td><font class="text10pt">每天熱量需要：</font></td>
+            <td><font class="text10pt">
+              <input type="text" name="energy" onFocus="this.blur();" style="background:#EBEBC4" size="10">
+              卡路里/天</font></td>
+          </tr>
+          <tr> 
+            <td colspan="2"> 
+              <p><font class="text10pt">- 如需要<b>增重</b>，需要</font> <font class="text10pt"> 
+                <input type="text" name="gain" onFocus="this.blur();" style="background:#EBEBC4" size="15">
+                卡路里/天</font></p>
+            </td>
+          </tr>
+          <tr> 
+            <td colspan="2"> 
+              <p><font class="text10pt">- 如需要<b>減重</b>，需要</font><font class="text10pt"> 
+                <input type="text" name="loss" onFocus="this.blur();" style="background:#EBEBC4" size="15">
+                卡路里/天</font></p>
+      <font color="#BD701F" class="text10pt">*- 輕量活動：步行４－５公里，購物、洗衣、高爾夫球等<br>
+      - 中量活動： 園藝、單車、網球等<br>
+      - 大量活動： 跑步、爬山、游泳、足球等</font> <br>
+
+            </td>
+          </tr>
+        </table>
+      </form>
+
+</body>
+</html>

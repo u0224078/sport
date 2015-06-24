@@ -1,0 +1,321 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>計算運動消耗</title>
+      <script language="javascript">
+<!--
+var kcal=0;
+var sitem="";
+var total="";
+function add_count(s_item){
+var tmp = "";
+var pos1 = 0;
+var pos2 = 0;
+	for (var poscount = 0; poscount < s_item.length; poscount++)
+	{
+		tmp = s_item.charAt(poscount);
+		if (tmp == "(")
+		{
+			pos1 = poscount+1;
+		}
+		else if (tmp == ")")
+		{
+			pos2 = poscount;
+		}
+	}
+	kcal = kcal + parseInt(s_item.substring(pos1, pos2));
+	return kcal;
+}
+function delete_item(form){
+	sitem=(form.selected_display.options[form.selected_display.selectedIndex].value);
+	if (form.selected_display.selectedIndex != 0)
+	{
+		form.cal_volume.value = delete_count(sitem);
+		form.selected_display.options[form.selected_display.selectedIndex]=null;
+	}
+}
+function delete_count(s_item){
+var tmp = "";
+var pos1 = 0;
+var pos2 = 0;
+	for (var poscount = 0; poscount < s_item.length; poscount++)
+	{
+		tmp = s_item.charAt(poscount);
+		if (tmp == "(")
+		{
+			pos1 = poscount+1;
+		}
+		else if (tmp == ")")
+		{
+			pos2 = poscount;
+		}
+	}
+	kcal = kcal - parseInt(s_item.substring(pos1, pos2));
+	return kcal;
+}
+function cal_volume1(form){
+	sitem=(form.kcal_item1.options[form.kcal_item1.selectedIndex].value);
+	food = new Option(sitem,sitem);
+	form.selected_display.options[form.selected_display.length]=food;
+	form.cal_volume.value = add_count(sitem);
+	form.kcal_item1.selectedIndex=0;	
+}
+function cal_volume2(form){
+	sitem=(form.kcal_item2.options[form.kcal_item2.selectedIndex].value);
+	food = new Option(sitem,sitem);
+	form.selected_display.options[form.selected_display.length]=food;
+	form.cal_volume.value = add_count(sitem);
+	form.kcal_item2.selectedIndex=0;		
+}
+function cal_volume3(form){
+	sitem=(form.kcal_item3.options[form.kcal_item3.selectedIndex].value);
+	food = new Option(sitem,sitem);
+	form.selected_display.options[form.selected_display.length]=food;
+	form.cal_volume.value = add_count(sitem);
+	form.kcal_item3.selectedIndex=0;		
+}
+function cal_volume4(form){
+	sitem=(form.kcal_item4.options[form.kcal_item4.selectedIndex].value);
+	food = new Option(sitem,sitem);
+	form.selected_display.options[form.selected_display.length]=food;
+	form.cal_volume.value = add_count(sitem);
+	form.kcal_item4.selectedIndex=0;	
+}
+function cal_volume5(form){
+	sitem = (form.kcal_item5.options[form.kcal_item5.selectedIndex].value);
+	food = new Option(sitem,sitem);
+	form.selected_display.options[form.selected_display.length] = food;
+	form.cal_volume.value = add_count(sitem);
+	form.kcal_item5.selectedIndex=0;	
+}
+function cal_volume6(form){
+	sitem = (form.kcal_item6.options[form.kcal_item6.selectedIndex].value);
+	food = new Option(sitem,sitem);
+	form.selected_display.options[form.selected_display.length] = food;
+	form.cal_volume.value = add_count(sitem);
+	form.kcal_item6.selectedIndex=0;	
+}
+function cal_volume7(form){
+	sitem = (form.kcal_item7.options[form.kcal_item7.selectedIndex].value);
+	food = new Option(sitem,sitem);
+	form.selected_display.options[form.selected_display.length] = food;
+	form.cal_volume.value = add_count(sitem);
+	form.kcal_item7.selectedIndex=0;	
+}
+function cal_volume8(form){
+	sitem = (form.kcal_item8.options[form.kcal_item8.selectedIndex].value);
+	food = new Option(sitem,sitem);
+	form.selected_display.options[form.selected_display.length] = food;
+	form.cal_volume.value = add_count(sitem);
+	form.kcal_item8.selectedIndex=0;	
+}
+function cal_volume9(form){
+	sitem = (form.kcal_item9.options[form.kcal_item9.selectedIndex].value);
+	food = new Option(sitem,sitem);
+	form.selected_display.options[form.selected_display.length] = food;
+	form.cal_volume.value = add_count(sitem);
+	form.kcal_item9.selectedIndex=0;	
+}
+function cal_volume10(form){
+	sitem = (form.kcal_item10.options[form.kcal_item10.selectedIndex].value);
+	food = new Option(sitem,sitem);
+	form.selected_display.options[form.selected_display.length] = food;
+	form.cal_volume.value = add_count(sitem);
+	form.kcal_item10.selectedIndex=0;	
+}
+function cal_volume11(form){
+	sitem = (form.kcal_item11.options[form.kcal_item11.selectedIndex].value);
+	food = new Option(sitem,sitem);
+	form.selected_display.options[form.selected_display.length] = food;
+	form.cal_volume.value = add_count(sitem);
+	form.kcal_item11.selectedIndex=0;	
+}
+function cal_volume12(form){
+	sitem = (form.kcal_item12.options[form.kcal_item12.selectedIndex].value);
+	food = new Option(sitem,sitem);
+	form.selected_display.options[form.selected_display.length] = food;
+	form.cal_volume.value = add_count(sitem);
+	form.kcal_item12.selectedIndex=0;	
+}
+function cal_volume13(form){
+	sitem = (form.kcal_item13.options[form.kcal_item13.selectedIndex].value);
+	food = new Option(sitem,sitem);
+	form.selected_display.options[form.selected_display.length] = food;
+	form.cal_volume.value = add_count(sitem);
+	form.kcal_item13.selectedIndex=0;	
+}
+function cal_volume14(form){
+	sitem = (form.kcal_item14.options[form.kcal_item14.selectedIndex].value);
+	food = new Option(sitem,sitem);
+	form.selected_display.options[form.selected_display.length] = food;
+	form.cal_volume.value = add_count(sitem);
+	form.kcal_item14.selectedIndex=0;	
+}
+function cal_volume15(form){
+	sitem = (form.kcal_item15.options[form.kcal_item15.selectedIndex].value);
+	food = new Option(sitem,sitem);
+	form.selected_display.options[form.selected_display.length] = food;
+	form.cal_volume.value = add_count(sitem);
+	form.kcal_item15.selectedIndex=0;	
+}
+function cal_volume16(form){
+	sitem = (form.kcal_item16.options[form.kcal_item16.selectedIndex].value);
+	food = new Option(sitem,sitem);
+	form.selected_display.options[form.selected_display.length] = food;
+	form.cal_volume.value = add_count(sitem);
+	form.kcal_item16.selectedIndex=0;	
+}
+function cal_volume17(form){
+	sitem = (form.kcal_item17.options[form.kcal_item17.selectedIndex].value);
+	food = new Option(sitem,sitem);
+	form.selected_display.options[form.selected_display.length] = food;
+	form.cal_volume.value = add_count(sitem);
+	form.kcal_item17.selectedIndex=0;	
+}
+function cal_volume18(form){
+	sitem = (form.kcal_item18.options[form.kcal_item18.selectedIndex].value);
+	food = new Option(sitem,sitem);
+	form.selected_display.options[form.selected_display.length] = food;
+	form.cal_volume.value = add_count(sitem);
+	form.kcal_item18.selectedIndex=0;	
+}
+//-->
+</script>
+
+</head>
+
+<body>
+&nbsp; &nbsp; &nbsp;<img src="image/6.png" width="400" height="100">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<a href="one.html"><img src="social3.jpg" width="125" height="125" alt="sample"></a>
+
+
+<form method="post" action="">
+        <table border=0 width=400 cellpadding="2" cellspacing="0">
+          <tr> 
+            <td><font color="#BD701F" ><br>
+              走路<br>
+            </font></td>
+            <td><font color="#BD701F"><br>
+              爬樓梯<br>
+            </font></td>
+          </tr>
+          <tr> 
+            <td> 
+              <select name=kcal_item1 onChange="cal_volume1(this.form)" style="width:172px">
+                <option value=0>-- 請選擇 -- 
+                <option value= 慢走[4公里/小時](105)>慢走[4公里/小時](105)
+                <option value= 快走、健走[6.0公里/小時](165)> 快走、健走[6.0公里/小時](165)
+              </select>
+ </td>
+            <td> 
+              <select name=kcal_item4 onChange="cal_volume4(this.form)" style="width:203px">
+                <option value=0>-- 請選擇 -- 
+                <option value= 下樓梯(96)>下樓梯(96)
+                <option value= 上樓梯(252)>上樓梯(252) 
+               </select>
+            </td>
+         </tr>
+          <tr> 
+            <td><font color=#BD701F>跑步</font></td>
+            <td><font color=#BD701F>騎腳踏車</font></td>
+          </tr>
+          <tr> 
+            <td> 
+              <select name=kcal_item7 onChange="cal_volume7(this.form)" style="width:172px">
+                <option value=0>-- 請選擇 -- 
+                <option value=慢跑[8公里/小時](246)>慢跑[8公里/小時](246) 
+                <option value=快跑[12公里/小時](381)>快跑[12公里/小時](381) 
+                <option value=快跑[16公里/小時](504)>快跑[16公里/小時](504)
+           
+              </select>
+            </td>
+            <td> 
+              <select name=kcal_item14 onChange="cal_volume14(this.form)" style="width:203px">
+                <option value=0>-- 請選擇 -- 
+                <option value=騎腳踏[一般速度，10公里/小時](120)>騎腳踏[一般速度，10公里/小時](120)
+                <option value=騎腳踏車[快，20公里/小時](252)>騎腳踏車[快，20公里/小時](252) 
+                <option value=騎腳踏車[很快，30公里/小時](378)>騎腳踏車[很快，30公里/小時](378) 
+               
+              </select>
+            </td>
+          </tr>
+          <tr> 
+            <td><font color=#BD701F>球類</font></td>
+            <td><font color=#BD701F>舞蹈</font></td>
+          </tr>
+          <tr> 
+            <td> 
+              <select name=kcal_item6 onChange="cal_volume6(this.form)" style="width:172px">
+                <option value=0>-- 請選擇 -- 
+                <option value=排球(108)>排球(108) 
+                <option value=保齡球(108)>保齡球(108) 
+                <option value=乒乓球(126)>乒乓球(126) 
+                <option value=棒壘球(141)>棒壘球(141) 
+                <option value=高爾夫(150)>高爾夫(150)
+                <option value=羽毛球(153)>羽毛球(153) 
+                <option value=籃球半場(189)>籃球半場(189) 
+                <option value=籃球全場(249)>籃球全場(249) 
+                <option value=網球(198)>網球(198) 
+                <option value=足球(231)>足球(231) 
+               
+              </select>
+            </td>
+            <td> 
+              <select name=kcal_item12 onChange="cal_volume12(this.form)" style="width:203px">
+                <option value=0>-- 請選擇 -- 
+                <option value=跳舞[慢](93)>跳舞[慢](93)
+                <option value=跳舞[快](159)>跳舞[快](159)
+                <option value=有氧舞蹈(204)>有氧舞蹈(204) 
+                
+              </select>
+            </td>
+          </tr>
+          <tr> 
+            <td><font color=#BD701F>游泳</font></td>
+            <td><font color=#BD701F>其他運動</font></td>
+          </tr>
+          <tr> 
+            <td> 
+              <select name=kcal_item5 onChange="cal_volume5(this.form)" style="width:203px">
+                <option value=0>-- 請選擇 -- 
+                <option value=蛙式(354)>蛙式(354) 
+                <option value=自由式(567)>自由式(567)
+                <option value=蝶式(575)>蝶式(575)
+              </select>
+            </td>
+            <td> 
+              <select name=kcal_item13 onChange="cal_volume13(this.form)" style="width:203px">
+                <option value=0>-- 請選擇 -- 
+                <option value=伸展運動(75)>伸展運動(75) 
+                <option value=划船[4公里/小時](132)>划船[4公里/小時](132) 
+                <option value=瑜珈(90)>瑜珈(90) 
+                <option value=飛盤(96)>飛盤(96)
+                <option value=太極拳(126)>太極拳(126) 
+                <option value=溜直排輪(153)>溜直排輪(153) 
+                <option value=跳繩[慢](252)>跳繩[慢](252) 
+                <option value=跳繩[快](378)>跳繩[快](378) 
+                <option value=拳擊(342)>拳擊(342)
+                <option value=划船機(284)>划船機(284) 
+                <option value=滑步機(284)>滑步機(284) 
+                
+              </select>
+              <a name="kcal"></a> </td>
+          </tr>
+
+        </table>
+
+        <table border=0 width=400 cellpadding="0" cellspacing="0">
+          <tr>
+            <td><select name="selected_display" size="10" onChange="delete_item(this.form)" style="width:400px">
+              <option value="selected" style="color: #99995B">你做了哪些運動:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+              </select>
+              <br>
+            <td>你的熱量消耗為：
+                <input type="text" name="cal_volume" value=0 size=10>
+              卡路里</td> </td>
+          </tr>
+        </table>
+        <p> 
+        </form>
+</body>
+</html>
