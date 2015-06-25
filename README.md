@@ -66,4 +66,4 @@
 ## ##
 - Bigboard :https://trello.com/b/98kg2aFR/-
 - ![Bigboard](http://i.imgur.com/rtpjlXN.jpg)
-- ![burndown](http://i.imgur.com/7S8QvPK.jpg)
+- ![burndown](http://i.imgur.com/65TcBEC.png?1)
